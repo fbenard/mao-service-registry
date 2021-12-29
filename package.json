@@ -1,0 +1,24 @@
+{
+  "name": "mao-service-discovery",
+  "version": "0.1.0",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "nodemon app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/n074num83r/mao/mao-service-discovery.git"
+  },
+  "author": "Fabien BÉNARD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/n074num83r/mao/mao-service-discovery/issues"
+  },
+  "homepage": "https://gitlab.com/n074num83r/mao/mao-service-discovery#readme",
+  "dependencies": {
+    "mao-core": "file://../mao-core"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

@@ -16,7 +16,7 @@
   },
   "homepage": "https://gitlab.com/n074num83r/mao/mao-service-discovery#readme",
   "dependencies": {
-    "mao-core": "file://../mao-core"
+    "mao-core": "^0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

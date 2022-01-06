@@ -20,4 +20,10 @@ let app = new App
 
 // Start the app
 
-app.start();
+app.start().catch
+(
+	(error) =>
+	{
+		console.log(error);
+	}
+);

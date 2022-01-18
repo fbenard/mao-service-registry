@@ -12,7 +12,7 @@
 		},
 		"service":
 		{
-			"discovery":
+			"registry":
 			{
 				"services":
 				{

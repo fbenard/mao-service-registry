@@ -12,7 +12,7 @@ class ServiceService
 	{
 		// Retrieve all services
 
-		let services = global.config.mao.service.discovery.services;
+		let services = global.config.mao.service.registry.services;
 
 
 		// Check whether service has been registered
@@ -40,7 +40,7 @@ class ServiceService
 	{
 		// Retrieve all services
 
-		let services = global.config.mao.service.discovery.services;
+		let services = global.config.mao.service.registry.services;
 
 
 		// Register the service

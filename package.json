@@ -1,5 +1,5 @@
 {
-  "name": "mao-service-discovery",
+  "name": "mao-service-registry",
   "version": "0.1.0",
   "main": "app/index.js",
   "scripts": {
@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/n074num83r/mao/mao-service-discovery.git"
+    "url": "git+https://gitlab.com/n074num83r/mao/mao-service-registry.git"
   },
   "author": "Fabien BÉNARD",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/n074num83r/mao/mao-service-discovery/issues"
+    "url": "https://gitlab.com/n074num83r/mao/mao-service-registry/issues"
   },
-  "homepage": "https://gitlab.com/n074num83r/mao/mao-service-discovery#readme",
+  "homepage": "https://gitlab.com/n074num83r/mao/mao-service-registry#readme",
   "dependencies": {
     "mao-core": "^0.1"
   },

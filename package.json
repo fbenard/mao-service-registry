@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/n074num83r/mao/mao-service-registry.git"
+    "url": "git+https://github.com/fbenard/mao-service-registry.git"
   },
   "author": "Fabien BÉNARD",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/n074num83r/mao/mao-service-registry/issues"
+    "url": "https://github.com/fbenard/mao-service-registry/issues"
   },
-  "homepage": "https://gitlab.com/n074num83r/mao/mao-service-registry#readme",
+  "homepage": "https://github.com/fbenard/mao-service-registry",
   "dependencies": {
     "mao-core": "^0.1"
   },

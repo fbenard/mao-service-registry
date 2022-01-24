@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/n074num83r/mao/mao-service-registry.git
+git remote add origin https://github.com/fbenard/mao-service-registry.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:963a00bb7878ed14f0aa9f41481c3512?https://gitlab.com/n074num83r/mao/mao-service-registry/-/settings/integrations)
+- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:963a00bb7878ed14f0aa9f41481c3512?https://github.com/fbenard/mao-service-registry/-/settings/integrations)
 
 ## Collaborate with your team
 

@@ -1,0 +1,26 @@
+version: 2.1
+
+orbs:
+  snyk: snyk/snyk@1.1.2
+
+jobs:
+  my-job:
+    docker:
+      - image: cimg/base
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: docker build -t fbenard/mao-service-registry:latest .
+      - run:
+          name: Install dependencies
+          command: npm install -q
+      - snyk/scan:
+          docker-image-name: fbenard/mao-service-registry:latest
+          target-file: "Dockerfile"
+
+workflows:
+  my-workflow:
+    jobs:
+      - my-job

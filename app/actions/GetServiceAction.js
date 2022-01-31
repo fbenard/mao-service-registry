@@ -14,7 +14,7 @@ class GetServiceAction
 	 *
 	 */
 
-	run(request, response, next)
+	async run(request, response, next)
 	{
 		try
 		{

@@ -13,7 +13,7 @@ class PostServiceAction
 	 *
 	 */
 
-	run(request, response, next)
+	async run(request, response, next)
 	{
 		// Create and run the command
 

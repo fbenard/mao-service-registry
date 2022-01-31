@@ -8,7 +8,7 @@ class RegisterServiceCommand
 	 *
 	 */
 
-	run(serviceCode, serviceUrl)
+	async run(serviceCode, serviceUrl)
 	{
 		// Retrieve all services
 

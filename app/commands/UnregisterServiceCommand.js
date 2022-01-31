@@ -7,7 +7,7 @@ const ServiceNotFoundError = require(`../errors/ServiceNotFoundError.js`);
  *
  */
 
-class RegisterServiceCommand
+class UnregisterServiceCommand
 {
 	/**
 	 *
@@ -37,4 +37,4 @@ class RegisterServiceCommand
 
 // Export the class
 
-module.exports = RegisterServiceCommand;
+module.exports = UnregisterServiceCommand;

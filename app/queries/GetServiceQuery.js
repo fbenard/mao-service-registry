@@ -1,14 +1,19 @@
+// Internal dependencies
+
+const ServiceNotFoundError = require(`../errors/ServiceNotFoundError.js`);
+
+
 /**
  *
  */
 
-class ServiceService
+class GetServiceQuery
 {
 	/**
 	 *
 	 */
 
-	getService(serviceCode)
+	run(serviceCode)
 	{
 		// Retrieve all services
 
@@ -19,7 +24,7 @@ class ServiceService
 
 		if (services.hasOwnProperty(serviceCode) !== true)
 		{
-			throw "Service not found";
+			throw new ServiceNotFoundError(serviceCode);
 		}
 
 
@@ -30,26 +35,9 @@ class ServiceService
 
 		return result;
 	}
-
-
-	/**
-	 *
-	 */
-
-	registerService(serviceCode, serviceUrl)
-	{
-		// Retrieve all services
-
-		let services = global.config.mao.service.registry.services;
-
-
-		// Register the service
-
-		services[serviceCode] = serviceUrl;
-	}
 }
 
 
 // Export the class
 
-module.exports = ServiceService;
+module.exports = GetServiceQuery;

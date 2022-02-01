@@ -6,6 +6,12 @@ info:
     name: "MIT"
     url: "https://opensource.org/licenses/mit-license.php"
 paths:
+  /api/health/ready:
+    get:
+      description: "Check whether service is ready"
+      responses:
+        "200":
+          description: "Service is ready"
   /api/service/{serviceCode}:
     delete:
       description: "Unregister a service"

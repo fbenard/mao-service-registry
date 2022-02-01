@@ -27,3 +27,8 @@ app.start().catch
 		console.log(error);
 	}
 );
+
+
+// Export
+
+module.exports = app;

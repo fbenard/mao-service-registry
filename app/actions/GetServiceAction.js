@@ -20,7 +20,7 @@ class GetServiceAction
 		{
 			// Create and run the query
 
-			let result = new GetServiceQuery().run
+			let result = await new GetServiceQuery().run
 			(
 				request.params.serviceCode
 			);

@@ -17,6 +17,9 @@ jobs:
       - snyk/scan:
           docker-image-name: fbenard/mao-service-registry:latest
           target-file: "Dockerfile"
+      - run:
+          name: Run tests
+          command: npm test
 
 workflows:
   my-workflow:

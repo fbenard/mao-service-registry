@@ -11,6 +11,9 @@ jobs:
       - checkout
       - snyk/scan
       - run:
+          name: Install dependencies
+          command: npm install -q
+      - run:
           name: Run tests
           command: npm test
       - setup_remote_docker

@@ -13,7 +13,7 @@ class GetServiceQuery
 	 *
 	 */
 
-	run(serviceCode)
+	async run(serviceCode)
 	{
 		// Retrieve all services
 

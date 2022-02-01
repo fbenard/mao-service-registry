@@ -17,7 +17,7 @@ class DeleteServiceAction
 	async run(request, response, next)
 	{
 		try
-		{		
+		{
 			// Create and run the command
 
 			new UnregisterServiceCommand().run
@@ -26,9 +26,10 @@ class DeleteServiceAction
 			);
 
 
-			// Send response
+			// Send 200 response
 
-			response.status(200).send();
+			response.statusMessage = `Service unregistered`;
+			response.status(200).end();
 		}
 		catch (error)
 		{
@@ -36,8 +37,8 @@ class DeleteServiceAction
 			{
 				// Send 404 response
 
-				response.setHeader(`content-type`, `text/plain`);
-				response.status(404).send(`Service not found`);
+				response.statusMessage = `Service not found`;
+				response.status(404).end();
 			}
 			else
 			{

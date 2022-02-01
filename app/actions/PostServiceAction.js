@@ -26,7 +26,8 @@ class PostServiceAction
 
 		// Send response
 
-		response.status(201).send();
+		response.statusMessage = `Service registered`;
+		response.status(201).end();
 	}
 }
 

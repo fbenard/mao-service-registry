@@ -26,7 +26,7 @@ class GetServiceAction
 			);
 
 
-			// Send response
+			// Send 200 response
 
 			response.setHeader(`content-type`, `text/plain`);
 			response.status(200).send(result);
@@ -37,8 +37,8 @@ class GetServiceAction
 			{
 				// Send 404 response
 
-				response.setHeader(`content-type`, `text/plain`);
-				response.status(404).send(`Service not found`);
+				response.statusMessage = `Service not found`;
+				response.status(404).end();
 			}
 			else
 			{

@@ -5,10 +5,10 @@ const BaseController = require(`mao-core`).BaseController;
 
 // Internal dependencies
 
-const DeleteServiceAction = require(`../actions/DeleteServiceAction.js`);
-const DeleteServicesAction = require(`../actions/DeleteServicesAction.js`);
-const GetServiceAction = require(`../actions/GetServiceAction.js`);
-const PostServiceAction = require(`../actions/PostServiceAction.js`);
+const DeleteServiceAction = require(`../actions/DeleteServiceAction`);
+const DeleteServicesAction = require(`../actions/DeleteServicesAction`);
+const GetServiceAction = require(`../actions/GetServiceAction`);
+const PostServiceAction = require(`../actions/PostServiceAction`);
 
 
 /**

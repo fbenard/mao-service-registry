@@ -5,7 +5,7 @@ const { setWorldConstructor } = require(`@cucumber/cucumber`);
 
 // Internal dependencies
 
-const RegistryDriver = require(`../drivers/RegistryDriver.js`);
+const RegistryDriver = require(`../drivers/RegistryDriver`);
 
 
 /**

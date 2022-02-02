@@ -1,6 +1,6 @@
 // Internal dependencies
 
-const RegisterServiceCommand = require(`../commands/RegisterServiceCommand.js`);
+const RegisterServiceCommand = require(`../commands/RegisterServiceCommand`);
 
 
 /**

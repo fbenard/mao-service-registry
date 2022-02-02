@@ -1,6 +1,6 @@
 // Internal dependencies
 
-const ServiceNotFoundError = require(`../errors/ServiceNotFoundError.js`);
+const ServiceNotFoundError = require(`../errors/ServiceNotFoundError`);
 
 
 /**

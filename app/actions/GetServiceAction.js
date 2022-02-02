@@ -1,7 +1,7 @@
 // Internal dependencies
 
-const GetServiceQuery = require(`../queries/GetServiceQuery.js`);
-const ServiceNotFoundError = require(`../errors/ServiceNotFoundError.js`);
+const GetServiceQuery = require(`../queries/GetServiceQuery`);
+const ServiceNotFoundError = require(`../errors/ServiceNotFoundError`);
 
 
 /**

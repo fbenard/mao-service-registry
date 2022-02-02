@@ -1,7 +1,7 @@
 // Internal dependencies
 
-const UnregisterServiceCommand = require(`../commands/UnregisterServiceCommand.js`);
-const ServiceNotFoundError = require(`../errors/ServiceNotFoundError.js`);
+const UnregisterServiceCommand = require(`../commands/UnregisterServiceCommand`);
+const ServiceNotFoundError = require(`../errors/ServiceNotFoundError`);
 
 
 /**

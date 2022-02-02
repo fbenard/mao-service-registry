@@ -1,6 +1,6 @@
 // Internal dependencies
 
-const PurgeServicesCommand = require(`../commands/PurgeServicesCommand.js`);
+const PurgeServicesCommand = require(`../commands/PurgeServicesCommand`);
 
 
 /**

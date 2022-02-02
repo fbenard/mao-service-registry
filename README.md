@@ -20,7 +20,6 @@ npm install
 Create the `.env` file with the following content:
 
 ```
-MAO_CORE_SERVER_SCHEME=http
 MAO_CORE_SERVER_HOST=localhost
 MAO_CORE_SERVER_PORT=8080
 ```

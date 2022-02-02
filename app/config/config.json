@@ -5,7 +5,6 @@
 		{
 			"server":
 			{		
-				"scheme": {"ENV": "MAO_CORE_SERVER_SCHEME"},
 				"host": {"ENV": "MAO_CORE_SERVER_HOST"},
 				"port": {"ENV": "MAO_CORE_SERVER_PORT"}
 			}

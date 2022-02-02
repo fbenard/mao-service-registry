@@ -10,7 +10,7 @@ const chai = require(`chai`);
 
 Then
 (
-	"the service {string} has been successfully registered with the URL {string}",
+	"the service {string} can be retrieved with the URL {string}",
 	async function(serviceCode, serviceUrl)
 	{
 		// Retrieve the service
@@ -41,6 +41,22 @@ Then
 Then
 (
 	"the service can not be unregistered",
+	async function()
+	{
+		// Check whether status is 404
+		
+		chai.assert.equal(this.response.status, 404);
+	}
+);
+
+
+/**
+ *
+ */
+
+Then
+(
+	"the service can not be retrieved",
 	async function()
 	{
 		// Check whether status is 404

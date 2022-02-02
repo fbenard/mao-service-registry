@@ -87,6 +87,32 @@ When
 
 When
 (
+	"I try to retrieve the service {string}",
+	async function(serviceCode)
+	{
+		try
+		{
+			// Unregister the service
+
+			this.response = await this.registryDriver.retrieveService
+			(
+				serviceCode
+			);
+		}
+		catch (error)
+		{
+			this.response = error.response;
+		}
+	}
+);
+
+
+/**
+ *
+ */
+
+When
+(
 	"I purge services",
 	async function()
 	{
@@ -99,5 +125,24 @@ When
 		// It means services have been purged
 
 		chai.assert.equal(response.status, 204);
+	}
+);
+
+
+/**
+ *
+ */
+
+When
+(
+	"I retrieve the service {string}",
+	async function(serviceCode)
+	{
+		// Retrieve the service
+
+		this.response = await this.registryDriver.retrieveService
+		(
+			serviceCode
+		);
 	}
 );

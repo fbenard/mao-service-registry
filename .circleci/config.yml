@@ -27,7 +27,9 @@ jobs:
           command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - run:
           name: Push image
-          command: docker push fbenard/mao-service-registry:${CIRCLE_SHA1}
+          command: |
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+            docker push fbenard/mao-service-registry:${CIRCLE_SHA1}
 
 workflows:
   my-workflow:

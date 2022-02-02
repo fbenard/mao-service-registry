@@ -1,7 +1,18 @@
 Feature: Register a service
 
-	Scenario: Register a new service
-		Given I want to register the service "service-test" with the URL "http://service-test:8080"
-		When I register the service
-		Then the service has been successfully registered
-		And I can successfully get the service URL
+	Background:
+		Given the registry is empty
+
+	Scenario: Register a service
+		When I register the service "service-test" with the URL "http://service-test"
+		Then the service "service-test" has been successfully registered with the URL "http://service-test"
+
+	Scenario: Register a service twice
+		Given I have registered the service "service-test" with the URL "http://service-test"
+		When I register the service "service-test" with the URL "http://service-test"
+		Then the service "service-test" has been successfully registered with the URL "http://service-test"
+
+	Scenario: Update the URL of a service already registered
+		Given I have registered the service "service-test" with the URL "http://service-test-1"
+		When I register the service "service-test" with the URL "http://service-test-2"
+		Then the service "service-test" has been successfully registered with the URL "http://service-test-2"

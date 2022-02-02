@@ -14,7 +14,7 @@ const app = require(`${process.cwd()}/app/index`);
 
 BeforeAll
 (
-	function()
+	async function()
 	{
 		this.app = app;
 	}

@@ -1,7 +1,7 @@
 // External dependencies
 
 const { When } = require(`@cucumber/cucumber`);
-const axios = require(`axios`);
+const chai = require(`chai`);
 
 
 /**
@@ -10,21 +10,72 @@ const axios = require(`axios`);
 
 When
 (
-	"I register the service",
-	async function()
+	"I register the service {string} with the URL {string}",
+	async function(serviceCode, serviceUrl)
 	{
-		// Call POST /api/service/:serviceCode
+		// Register the service
 
-		this.response = await axios.post
+		let response = await this.registryDriver.registerService
 		(
-			`http://${global.config.mao.core.server.host}:${global.config.mao.core.server.port}/api/service/${this.serviceCode}`,
-			this.serviceUrl,
-			{
-				headers:
-				{
-					"content-type": `text/plain`
-				}
-			}
+			serviceCode,
+			serviceUrl
 		);
+
+
+		// Check whether status code is 201
+		// It means the service has been successfully registered
+		
+		chai.assert.equal(response.status, 201);
+	}
+);
+
+
+/**
+ *
+ */
+
+When
+(
+	"I unregister the service {string}",
+	async function(serviceCode)
+	{
+		// Unregister the service
+
+		let response = await this.registryDriver.unregisterService
+		(
+			serviceCode
+		);
+
+
+		// Check whether status code is 204
+		// It means the service has been successfully unregistered
+		
+		chai.assert.equal(response.status, 204);
+	}
+);
+
+
+/**
+ *
+ */
+
+When
+(
+	"I try to unregister the service {string}",
+	async function(serviceCode)
+	{
+		try
+		{
+			// Unregister the service
+
+			this.response = await this.registryDriver.unregisterService
+			(
+				serviceCode
+			);
+		}
+		catch (error)
+		{
+			this.response = error.response;
+		}
 	}
 );

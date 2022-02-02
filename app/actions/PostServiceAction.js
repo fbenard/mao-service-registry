@@ -17,7 +17,7 @@ class PostServiceAction
 	{
 		// Create and run the command
 
-		new RegisterServiceCommand().run
+		await new RegisterServiceCommand().run
 		(
 			request.params.serviceCode,
 			request.body

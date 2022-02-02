@@ -12,6 +12,12 @@ paths:
       responses:
         "200":
           description: "Service is ready"
+  /api/service:
+    delete:
+      description: "Purge services"
+      responses:
+        "204":
+          description: "Services purged"
   /api/service/{serviceCode}:
     delete:
       description: "Unregister a service"
@@ -22,7 +28,7 @@ paths:
             type: string
           required: true
       responses:
-        "200":
+        "204":
           description: "Service unregistered"
         "404":
           description: "Service not found"

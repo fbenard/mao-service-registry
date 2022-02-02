@@ -1,6 +1,7 @@
 // External dependencies
 
 const { Given } = require(`@cucumber/cucumber`);
+const chai = require(`chai`);
 
 
 /**
@@ -9,12 +10,43 @@ const { Given } = require(`@cucumber/cucumber`);
 
 Given
 (
-	"I want to register the service {string} with the URL {string}",
+	"the registry is empty",
+	async function()
+	{
+		// Purge services
+
+		let response = await this.registryDriver.purgeServices();
+
+
+		// Make sure status code is 204
+		// It means services have been purged
+
+		chai.assert.equal(response.status, 204);
+	}
+);
+
+
+/**
+ *
+ */
+
+Given
+(
+	"I have registered the service {string} with the URL {string}",
 	async function(serviceCode, serviceUrl)
 	{
-		// Store service credentials
+		// Register the service
+
+		let response = await this.registryDriver.registerService
+		(
+			serviceCode,
+			serviceUrl
+		);
+
+
+		// Check whether status code is 201
+		// It means the service has been successfully registered
 		
-		this.serviceCode = serviceCode;
-		this.serviceUrl = serviceUrl;
+		chai.assert.equal(response.status, 201);
 	}
 );

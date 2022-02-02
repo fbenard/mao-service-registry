@@ -20,7 +20,7 @@ class DeleteServiceAction
 		{
 			// Create and run the command
 
-			new UnregisterServiceCommand().run
+			await new UnregisterServiceCommand().run
 			(
 				request.params.serviceCode
 			);
@@ -29,7 +29,7 @@ class DeleteServiceAction
 			// Send 200 response
 
 			response.statusMessage = `Service unregistered`;
-			response.status(200).end();
+			response.status(204).end();
 		}
 		catch (error)
 		{

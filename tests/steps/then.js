@@ -1,7 +1,6 @@
 // External dependencies
 
 const { Then } = require(`@cucumber/cucumber`);
-const axios = require(`axios`);
 const chai = require(`chai`);
 
 
@@ -11,13 +10,26 @@ const chai = require(`chai`);
 
 Then
 (
-	"the service has been successfully registered",
-	async function()
+	"the service {string} has been successfully registered with the URL {string}",
+	async function(serviceCode, serviceUrl)
 	{
-		// Check whether status code is 201
-		// It means the service has been successfully registered
+		// Retrieve the service
+
+		let response = await this.registryDriver.retrieveService
+		(
+			serviceCode
+		);
+
+
+		// Check whether status code is 200
+		// It means the service has been successfully retrieved
 		
-		chai.assert.equal(this.response.status, 201);
+		chai.assert.equal(response.status, 200);
+
+
+		// Check whether response data contains the service URL
+
+		chai.assert.equal(response.data, serviceUrl);
 	}
 );
 
@@ -28,25 +40,44 @@ Then
 
 Then
 (
-	"I can successfully get the service URL",
+	"the service can not be unregistered",
 	async function()
 	{
-		// Call GET /api/service/:serviceCode
-
-		this.response = await axios.get
-		(
-			`http://${global.config.mao.core.server.host}:${global.config.mao.core.server.port}/api/service/${this.serviceCode}`
-		);
-
-
-		// Check whether status code is 200
-		// It means the service has been successfully retrieved
+		// Check whether status is 404
 		
-		chai.assert.equal(this.response.status, 200);
+		chai.assert.equal(this.response.status, 404);
+	}
+);
 
 
-		// Check whether response data contains the service URL
+/**
+ *
+ */
 
-		chai.assert.equal(this.response.data, this.serviceUrl);
+Then
+(
+	"the service {string} has been successfully unregistered",
+	async function(serviceCode)
+	{
+		try
+		{		
+			// Retrieve the service
+
+			let response = await this.registryDriver.retrieveService
+			(
+				serviceCode
+			);
+
+
+			// We should not be there...
+
+			chai.assert.fail();
+		}
+		catch (error)
+		{
+			// Check whether service could not be found
+			
+			chai.assert.equal(error.response.status, 404);
+		}
 	}
 );

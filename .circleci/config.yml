@@ -6,22 +6,21 @@ orbs:
 jobs:
   my-job:
     docker:
-      - image: cimg/node:lts
+      - image: cimg/base:stable
     steps:
       - checkout
-      - snyk/scan
-      - run:
-          name: Install dependencies
-          command: npm install -q
-      - run:
-          name: Run tests
-          command: npm test
       - setup_remote_docker
       - run:
-          name: Build Docker image
-          command: docker build -t fbenard/mao-service-registry:latest .
+          name: Build test image
+          command: docker build -t fbenard/mao-service-registry:test --target test .
+      - run:
+          name: Run tests
+          command: docker run -it --rm fbenard/mao-service-registry:test
+      - run:
+          name: Build production image
+          command: docker build -t fbenard/mao-service-registry --target production .
       - snyk/scan:
-          docker-image-name: fbenard/mao-service-registry:latest
+          docker-image-name: fbenard/mao-service-registry
           target-file: "Dockerfile"
 
 workflows:

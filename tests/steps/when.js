@@ -79,3 +79,25 @@ When
 		}
 	}
 );
+
+
+/**
+ *
+ */
+
+When
+(
+	"I purge services",
+	async function()
+	{
+		// Purge services
+
+		let response = await this.registryDriver.purgeServices();
+
+
+		// Make sure status code is 204
+		// It means services have been purged
+
+		chai.assert.equal(response.status, 204);
+	}
+);

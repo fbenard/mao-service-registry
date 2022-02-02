@@ -1,4 +1,4 @@
-Feature: Register a service
+Feature: Service registration
 
 	Background:
 		Given the registry is empty

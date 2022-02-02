@@ -1,4 +1,4 @@
-Feature: Unregister a service
+Feature: Service unregistration
 
 	Background:
 		Given the registry is empty

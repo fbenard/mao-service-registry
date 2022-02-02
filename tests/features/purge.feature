@@ -1,4 +1,4 @@
-Feature: Purge services
+Feature: Service purge
 
 	Scenario: Purge services
 		Given I have registered the service "service-test-1" with the URL "http://service-test-1"

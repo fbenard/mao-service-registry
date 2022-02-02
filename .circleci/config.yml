@@ -12,7 +12,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build test image
-          command: docker build -t fbenard/mao-service-registry:test --target test .
+          command: docker build -t fbenard/mao-service-registry --target test .
       - run:
           name: Run tests
           command: docker run --env MAO_CORE_SERVER_HOST=${MAO_CORE_SERVER_HOST} --env MAO_CORE_SERVER_PORT=${MAO_CORE_SERVER_PORT} -it --rm fbenard/mao-service-registry:test
@@ -26,7 +26,7 @@ jobs:
           name: Push image
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
-            docker push fbenard/mao-service-registry:${CIRCLE_SHA1}
+            docker tag fbenard/mao-service-registry fbenard/mao-service-registry:${CIRCLE_SHA1}
 
 workflows:
   my-workflow:

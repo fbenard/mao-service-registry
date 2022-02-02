@@ -15,7 +15,7 @@ jobs:
           command: docker build -t fbenard/mao-service-registry:test --target test .
       - run:
           name: Run tests
-          command: docker run -it --rm fbenard/mao-service-registry:test
+          command: docker run --env MAO_CORE_SERVER_HOST=$MAO_CORE_SERVER_HOST MAO_CORE_SERVER_PORT=$MAO_CORE_SERVER_PORT -it --rm fbenard/mao-service-registry:test
       - run:
           name: Build production image
           command: docker build -t fbenard/mao-service-registry --target production .

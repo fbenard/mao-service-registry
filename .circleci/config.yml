@@ -27,6 +27,7 @@ jobs:
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
             docker tag fbenard/mao-service-registry fbenard/mao-service-registry:${CIRCLE_SHA1}
+            docker push fbenard/mao-service-registry:${CIRCLE_SHA1}
 
 workflows:
   my-workflow:

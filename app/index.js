@@ -29,6 +29,6 @@ app.start().catch
 );
 
 
-// Export
+// Export app
 
 module.exports = app;

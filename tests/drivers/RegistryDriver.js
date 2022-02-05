@@ -13,9 +13,9 @@ class RegistryDriver
 	 *
 	 */
 
-	constructor(registryHost, registryPort)
+	constructor(serviceHost, servicePort)
 	{
-		this.url = `http://${registryHost}:${registryPort}`;
+		this.url = `http://${serviceHost}:${servicePort}`;
 	}
 
 

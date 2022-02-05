@@ -16,6 +16,8 @@ BeforeAll
 (
 	async function()
 	{
+		// Create the app
+
 		this.app = app;
 	}
 );
@@ -29,6 +31,8 @@ AfterAll
 (
 	async function()
 	{
+		// Stop the app
+		
 		await this.app.stop();
 	}
 );

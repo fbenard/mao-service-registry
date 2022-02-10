@@ -4,7 +4,7 @@
   "main": "app/index.js",
   "scripts": {
     "start": "nodemon app/index.js",
-    "test": "./node_modules/.bin/cucumber-js --publish-quiet tests/features/**/*.feature --require \"tests/steps/**/*.js\" --require \"tests/steps/world.js\""
+    "test": "cucumber-js --publish-quiet tests/features/**/*.feature --require \"tests/steps/**/*.js\" --require \"tests/steps/world.js\""
   },
   "repository": {
     "type": "git",

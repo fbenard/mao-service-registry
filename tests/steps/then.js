@@ -15,7 +15,7 @@ Then
 	{
 		// Retrieve the service
 
-		let response = await this.registryDriver.retrieveService
+		let response = await this.registryConnector.retrieveService
 		(
 			serviceCode
 		);
@@ -79,7 +79,7 @@ Then
 		{		
 			// Retrieve the service
 
-			let response = await this.registryDriver.retrieveService
+			let response = await this.registryConnector.retrieveService
 			(
 				serviceCode
 			);

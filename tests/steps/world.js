@@ -5,7 +5,7 @@ const { setWorldConstructor } = require(`@cucumber/cucumber`);
 
 // Internal dependencies
 
-const RegistryDriver = require(`../drivers/RegistryDriver`);
+const RegistryConnector = require(`../connectors/RegistryConnector`);
 
 
 /**
@@ -20,7 +20,7 @@ class World
 
 	constructor()
 	{
-		this.registryDriver = new RegistryDriver
+		this.registryConnector = new RegistryConnector
 		(
 			global.config.mao.core.server.host,
 			global.config.mao.core.server.port

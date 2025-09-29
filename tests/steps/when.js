@@ -15,7 +15,7 @@ When
 	{
 		// Register the service
 
-		let response = await this.registryDriver.registerService
+		let response = await this.registryConnector.registerService
 		(
 			serviceCode,
 			serviceUrl
@@ -41,7 +41,7 @@ When
 	{
 		// Unregister the service
 
-		let response = await this.registryDriver.unregisterService
+		let response = await this.registryConnector.unregisterService
 		(
 			serviceCode
 		);
@@ -68,7 +68,7 @@ When
 		{
 			// Unregister the service
 
-			this.response = await this.registryDriver.unregisterService
+			this.response = await this.registryConnector.unregisterService
 			(
 				serviceCode
 			);
@@ -94,7 +94,7 @@ When
 		{
 			// Unregister the service
 
-			this.response = await this.registryDriver.retrieveService
+			this.response = await this.registryConnector.retrieveService
 			(
 				serviceCode
 			);
@@ -118,7 +118,7 @@ When
 	{
 		// Purge services
 
-		let response = await this.registryDriver.purgeServices();
+		let response = await this.registryConnector.purgeServices();
 
 
 		// Make sure status code is 204
@@ -140,7 +140,7 @@ When
 	{
 		// Retrieve the service
 
-		this.response = await this.registryDriver.retrieveService
+		this.response = await this.registryConnector.retrieveService
 		(
 			serviceCode
 		);

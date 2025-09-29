@@ -7,7 +7,7 @@ const axios = require(`axios`);
  *
  */
 
-class RegistryDriver
+class RegistryConnector
 {
 	/**
 	 *
@@ -101,4 +101,4 @@ class RegistryDriver
 
 // Export the class
 
-module.exports = RegistryDriver;
+module.exports = RegistryConnector;

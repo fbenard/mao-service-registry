@@ -15,7 +15,7 @@ Given
 	{
 		// Purge services
 
-		let response = await this.registryDriver.purgeServices();
+		let response = await this.registryConnector.purgeServices();
 
 
 		// Make sure status code is 204
@@ -37,7 +37,7 @@ Given
 	{
 		// Register the service
 
-		let response = await this.registryDriver.registerService
+		let response = await this.registryConnector.registerService
 		(
 			serviceCode,
 			serviceUrl

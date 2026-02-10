@@ -1,38 +1,96 @@
 // External dependencies
 
-const { AfterAll, BeforeAll } = require(`@cucumber/cucumber`);
+const { After, Before } = require(`@cucumber/cucumber`);
+const { setWorldConstructor, World, world } = require(`@cucumber/cucumber`);
 
 
 // Internal dependencies
 
-const app = require(`${process.cwd()}/app/index`);
+const App = require(`${process.cwd()}/node_modules/mao-core/lib/App`);
+const RegistryConnector = require(`../connectors/RegistryConnector`);
+const ServiceController = require(`../../app/controllers/ServiceController`);
 
 
 /**
  *
  */
 
-BeforeAll
+class CustomWorld extends World
+{
+	/**
+	 * 
+	 */
+
+	constructor(options)
+	{
+		// Call parent constructor
+
+		super(options);
+
+
+		// Create a mao-service-registry instance
+
+		this.app = new App
+		(
+			[
+				new ServiceController()
+			]
+		)
+
+
+		// Create a registry connector
+
+		this.registryConnector = new RegistryConnector
+		(
+			global.config.mao.core.server.host,
+			global.config.mao.core.server.port
+		);
+	}
+
+
+	/**
+	 * 
+	 */
+
+	async start()
+	{
+		await this.app.start();
+	}
+
+
+	/**
+	 * 
+	 */
+
+	async stop()
+	{
+		await this.app.stop();
+	}
+}
+
+
+// Set the world constructor
+
+setWorldConstructor(CustomWorld);
+
+
+// Start the registry service before each scenario
+
+Before
 (
 	async function()
 	{
-		// Create the app
-
-		this.app = app;
+		await this.start();
 	}
 );
 
 
-/**
- *
- */
+// Stop the registry service after each scenario
 
-AfterAll
+After
 (
 	async function()
 	{
-		// Stop the app
-		
-		await this.app.stop();
+		await this.stop();
 	}
 );

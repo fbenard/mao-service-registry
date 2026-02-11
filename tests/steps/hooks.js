@@ -5,7 +5,7 @@ const { AfterAll, BeforeAll } = require(`@cucumber/cucumber`);
 
 // Internal dependencies
 
-const App = require(`${process.cwd()}/node_modules/mao-core/lib/App`);
+const App = require(`../../node_modules/mao-core/lib/App`);
 const ServiceController = require(`../../app/controllers/ServiceController`);
 
 
